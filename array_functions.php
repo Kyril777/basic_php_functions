@@ -41,3 +41,7 @@ print_r(array_slice($pasta, 1)); // Array ( [0] => penne [1] => maracorni [2] =>
 print_r(array_slice($pasta, -1)); // Array ( [0] => orecchiette )
 
 
+// The array_count_values() returns an array using the values of array (which must be ints or strings) as keys and their frequency in array as values.
+
+$pastas = array("orecchiette", "spaghetti", "penne", "maracorni", "spaghetti", "farfalle", "orecchiette", "maracorni");
+print_r(array_count_values($pastas)); // Output: Array ( [orecchiette] => 2 [spaghetti] => 2 [penne] => 1 [maracorni] => 2 [farfalle] => 1 )
