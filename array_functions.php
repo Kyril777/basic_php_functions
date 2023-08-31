@@ -45,3 +45,20 @@ print_r(array_slice($pasta, -1)); // Array ( [0] => orecchiette )
 
 $pastas = array("orecchiette", "spaghetti", "penne", "maracorni", "spaghetti", "farfalle", "orecchiette", "maracorni");
 print_r(array_count_values($pastas)); // Output: Array ( [orecchiette] => 2 [spaghetti] => 2 [penne] => 1 [maracorni] => 2 [farfalle] => 1 )
+
+
+// array_combine() creates an array by using one array for keys and another for its values.
+$state = array('New Jersey', 'Pennsylvania', 'Maryland');
+$capital = array('Trenton', 'Harrisburg', 'Annapolis');
+$combinedArray = array_combine($state, $capital);
+
+print_r($combinedArray);
+
+/* Output:
+Array
+(
+    [New Jersey] => Trenton
+    [Pennsylvania] => Harrisburg
+    [Maryland] => Annapolis
+)
+*/
