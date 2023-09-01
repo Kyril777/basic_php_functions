@@ -62,3 +62,66 @@ Array
     [Maryland] => Annapolis
 )
 */
+
+
+// array_map() returns an array containing the results of applying the callback to the corresponding value of array
+// Use array_map() to square each value of an array.
+function square($n) {
+    return ($n * $n);
+}
+
+$nums = [1, 2, 3, 4, 5];
+$squared = array_map('square', $nums);
+print_r($squared);
+
+/* Output:
+Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 9
+    [3] => 16
+    [4] => 25
+)
+*/
+
+// Use array_map() to cube each value of an array.
+function cube($n)
+{
+    return ($n * $n * $n);
+}
+
+$nums = [1, 2, 3, 4, 5];
+$cubed = array_map('cube', $nums);
+print_r($cubed);
+
+/* Output:
+Array
+(
+    [0] => 1
+    [1] => 8
+    [2] => 27
+    [3] => 64
+    [4] => 125
+)
+*/
+
+
+// array_push() treats array as a stack, and pushes the passed variables onto the end of array. 
+// Use array_push() function two add additional trucks in the 'truck' array.
+$truck = array("chiller", "crane");
+array_push($truck, "flatbed", "tipper");
+print_r($truck);
+
+/* Ouput:
+Array
+(
+    [0] => chiller
+    [1] => crane
+    [2] => flatbed
+    [3] => tipper
+)
+*/
+
+
+
