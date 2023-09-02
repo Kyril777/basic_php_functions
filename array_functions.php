@@ -124,4 +124,61 @@ Array
 */
 
 
+// The array_replace() function replaces elements from passed arrays into the first array.
+// Use array_replace() to replace an employee lineup and make later additions.
+$employees = array("DeJong", "Suarez", "Muller", "Hall");
+$replacements = array(0 => "Paulsen", 1 => "Garcia");
+$addition = array(4 => "Martin", 5 => "Schuman");
+
+$finalTeam = array_replace($employees, $replacements, $addition);
+print_r($finalTeam);
+
+/* Output:
+Array
+(
+    [0] => Paulsen
+    [1] => Garcia
+    [2] => Muller
+    [3] => Hall
+    [4] => Martin
+    [5] => Schuman
+)
+*/
+
+
+// The array_replace_recursive function replaces elements from passed arrays into the first array recursively.
+// Use array_replace_recursive to replace spices per region.
+$spices = array('northenEurope' => array( "chives", "juniper") , 'mediterranean' => array("rosemary", "sage", "thyme"), 'westernAsia' => array("poppy", "tarragon", "bay leaf"));
+$replacements = array('northenEurope' => array('horseradish'), 'mediterranean' => array('cumin'), 'westernAsia' => array("dill", "marjoram", "garlic"));
+
+
+$rack = array_replace_recursive($spices, $replacements);
+print_r($rack);
+
+/* Output:
+Array
+(
+    [northenEurope] => Array
+        (
+            [0] => horseradish
+            [1] => juniper
+        )
+
+    [mediterranean] => Array
+        (
+            [0] => cumin
+            [1] => sage
+            [2] => thyme
+        )
+
+    [westernAsia] => Array
+        (
+            [0] => dill
+            [1] => marjoram
+            [2] => garlic
+        )
+)
+*/
+
+
 
