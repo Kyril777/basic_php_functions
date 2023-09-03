@@ -181,4 +181,104 @@ Array
 */
 
 
+<?php
+// The array_intersect() function returns an array containing all the values of array that are present in all the arguments. 
+// Use array_intersect() to find a common value between each arrays.
+$chemist = [
+	"name" => "William Lane",
+	"degree" => "PhD",
+	"tenure" => "yes",
+	"school" => "Rutgers"
+];
+
+$physicist = [
+	"name" => "Allan Goethe",
+	"degree" => "MS",
+	"tenure" => "no",
+	"school" => "Rutgers"
+];
+
+$mathematician = [
+	"name" => "Fiona Hughes",
+	"degree" => "PhD",
+	"tenure" => "no",
+	"school" => "Rochester"
+];
+
+$firstComparison = array_intersect($chemist, $physicist);
+print_r($firstComparison);
+/* Output:
+Array
+(
+    [school] => Rutgers
+)
+*/
+
+
+$secondComparison = array_intersect($chemist, $mathematician);
+print_r($secondComparison);
+/* Output:
+Array
+(
+    [degree] => PhD
+)
+*/
+
+$thirdComparison = array_intersect($physicist, $mathematician);
+print_r($thirdComparison);
+/* Output:
+Array
+(
+    [tenure] => no
+)
+*/
+
+
+$fruits = array("apple", "banana", "cantaloupe", "dragon fruit", "elderberry", "fig");
+
+print_r(array_chunk($fruits, 3));
+/* Output:
+Array
+(
+    [0] => Array
+        (
+            [0] => apple
+            [1] => banana
+            [2] => cantaloupe
+        )
+
+    [1] => Array
+        (
+            [0] => dragon fruit
+            [1] => elderberry
+            [2] => fig
+        )
+)
+*/
+
+print_r(array_chunk($fruits, 2, true));
+/* Output:
+Array
+(
+    [0] => Array
+        (
+            [0] => apple
+            [1] => banana
+        )
+
+    [1] => Array
+        (
+            [2] => cantaloupe
+            [3] => dragon fruit
+        )
+
+    [2] => Array
+        (
+            [4] => elderberry
+            [5] => fig
+        )
+)
+*/
+
+
 
