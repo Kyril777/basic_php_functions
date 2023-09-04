@@ -181,7 +181,6 @@ Array
 */
 
 
-<?php
 // The array_intersect() function returns an array containing all the values of array that are present in all the arguments. 
 // Use array_intersect() to find a common value between each arrays.
 $chemist = [
@@ -279,6 +278,3 @@ Array
         )
 )
 */
-
-
-
