@@ -40,3 +40,31 @@ $monsters = array("Vampire", "Frankenstein's Monster", "Wolfman", "Mummy", "Witc
 $rand_keys = array_rand($monsters, 2);
 echo $monsters[$rand_keys[0]] . "\n";
 echo $monsters[$rand_keys[1]] . "\n"; // "Vampire" will never be picked as the selection starts at [1] key.
+
+
+// The array_reduce() function iteratively reduces the array to a single value using a callback function.
+// Use array_reduce() to concatenate an array into one single value with components separated by a hyphen.
+function concatenateFunction($v1,$v2)
+{
+return $v1 . "-" . $v2;
+}
+$musketeers=array("Athos","Portos","Aramis", "D'Artagnan");
+print_r(array_reduce($musketeers,"concatenateFunction"));
+/* Output: -Athos-Portos-Aramis-D'Artagnan */
+
+
+// Use array_reduce() to figure out the sum and the product of a set of primes.
+function sum($carry, $item){
+    $carry += $item;
+    return $carry;
+}
+
+function product($carry, $item){
+    $carry *= $item;
+    return $carry;
+}
+
+$primes = array(2, 3, 5, 7, 11);
+
+var_dump(array_reduce($primes, "sum")); // Output: int(28)
+var_dump(array_reduce($primes, "product", 1)); // Output: int(2310)
