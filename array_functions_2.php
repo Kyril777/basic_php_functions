@@ -68,3 +68,80 @@ $primes = array(2, 3, 5, 7, 11);
 
 var_dump(array_reduce($primes, "sum")); // Output: int(28)
 var_dump(array_reduce($primes, "product", 1)); // Output: int(2310)
+
+
+// The array_search() function searches the array for a given value and returns the first corresponding key if successful.
+// Use array_search to find the key from an array of countries.
+$countries = array(0 => 'Argentina', 1 => 'Bolivia', 2 => 'Brazil', 3 => 'Chile', 4 => 'Colombia', 5 => 'Ecuador', 6 => 'Guyana', 7 => 'Paraguay', 8 => 'Peru', 9 => 'Suriname', 10 => 'Urugay', 11  => 'Venezula');
+
+print_r($key = array_search('Guyana', $countries)); // Output: 6
+print_r($key = array_search('Brazil', $countries));   // Output: 2
+
+
+// The array_reverse() function returns an array with elements in reverse order.
+// Use array_reverse() to reverse the order of a cheese array.
+$cheeses = array('manchego', 'cabrales', 'garrotxa', 'tetilla', 'roncal');
+
+print_r($key = array_reverse($cheeses));   
+/* Output:
+Array
+(
+    [0] => roncal
+    [1] => tetilla
+    [2] => garrotxa
+    [3] => cabrales
+    [4] => manchego
+)
+*/
+
+
+// The array_shift() function shifts an element off the beginning of array.
+// Use array_shift() function to promote a champion out of an array of ranked contenders.
+
+$contenders = array(0 => 'Marvin Marciano', 1 => 'Argentina Firpo', 2 => 'Larry LaLonde', 3 => 'Errol Ortiz', 4 => 'Vernon Wright');
+$champion = array_shift($contenders);
+
+print_r($contenders);
+/* Output:
+Array
+(
+    [0] => Argentina Firpo
+    [1] => Larry LaLonde
+    [2] => Errol Ortiz
+    [3] => Vernon Wright
+)
+*/
+
+print_r($champion); // Output: Marvin Marciano
+
+
+// The array_shift() function shifts an element off the beginning of array.
+// Use array_shift() function to promote a champion out of an array of ranked contenders.
+$contenders = array(0 => 'Marvin Marciano', 1 => 'Argentina Firpo', 2 => 'Larry LaLonde', 3 => 'Errol Ortiz', 4 => 'Vernon Wright');
+$champion = array_shift($contenders);
+
+print_r($contenders);
+/* Output:
+Array
+(
+    [0] => Argentina Firpo
+    [1] => Larry LaLonde
+    [2] => Errol Ortiz
+    [3] => Vernon Wright
+)
+*/
+
+// The array_splice() function removes a portion of the array and replace it with something else.
+// Use array_splice() to remove the last contender.
+$contenders1 = array_splice($contenders, -1);
+print_r($contenders);
+/* Output:
+Array
+(
+    [0] => Argentina Firpo
+    [1] => Larry LaLonde
+    [2] => Errol Ortiz
+)
+*/
+
+print_r($champion); // Output: Marvin Marciano
