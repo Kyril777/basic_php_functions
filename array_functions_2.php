@@ -133,7 +133,7 @@ Array
 
 // The array_splice() function removes a portion of the array and replace it with something else.
 // Use array_splice() to remove the last contender.
-$contenders1 = array_splice($contenders, -1);
+array_splice($contenders, -1);
 print_r($contenders);
 /* Output:
 Array
