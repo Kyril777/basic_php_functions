@@ -145,3 +145,27 @@ Array
 */
 
 print_r($champion); // Output: Marvin Marciano
+
+
+<?php
+// The array_unique function removes duplicate values from an array. The function recognizes the integer and string values as the same.
+// Use array_unique() to remove duplicates in an array of numbers.
+
+$input = array(55, "2", 76, "101", 101, 4, 2, "55", 76);
+$result = array_unique($input);
+var_dump($result);
+
+/*
+array(5) {
+  [0]=>
+  int(55)
+  [1]=>
+  string(1) "2"
+  [2]=>
+  int(76)
+  [3]=>
+  string(3) "101"
+  [5]=>
+  int(4)
+}
+*/
