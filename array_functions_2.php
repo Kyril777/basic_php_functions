@@ -147,7 +147,6 @@ Array
 print_r($champion); // Output: Marvin Marciano
 
 
-<?php
 // The array_unique function removes duplicate values from an array. The function recognizes the integer and string values as the same.
 // Use array_unique() to remove duplicates in an array of numbers.
 
@@ -167,5 +166,105 @@ array(5) {
   string(3) "101"
   [5]=>
   int(4)
+}
+*/
+
+
+// The array_unshift() function prepends one or more elements to the beginning of an array.
+// Use array_unshift() function to prepend two more elemnts in an existing object.
+
+$books = [
+    "Luke",
+    "John"
+];
+
+array_unshift($books, "Matthew", "Mark");
+var_dump($books);
+
+/* Output:
+array(4) {
+  [0]=>
+  string(7) "Matthew"
+  [1]=>
+  string(4) "Mark"
+  [2]=>
+  string(4) "Luke"
+  [3]=>
+  string(4) "John"
+}
+*/
+
+
+// The array_unshift() function prepends one or more elements to the beginning of an array.
+// Use array_unshift() function to prepend an associate array to another associatve array.
+
+$stadium1 = [
+    'Los Angeles' => [
+        'Rams' => 'SoFi Stadium',
+        'Chargers' => 'SoFi Stadium',
+    ],
+    'New York' => [
+        'Jets' => 'Met Life Stadium',
+        'Giants' => 'Met Life Stadium',
+    ],
+];
+$stadium2 = [
+    'Chicago' => [
+        'Cubs' => 'Wrigley Field',
+        'White Sox' => 'Guaranteed Rate Field'
+    ],	
+    'Los Angeles' => [
+        'Angels' => 'Angel Stadium of Anaheim',
+        'Dodgers' => 'Dodgers'
+    ],
+    'New York' => [
+        'Mets' => 'Citi Field',
+        'Yankees' => 'Yankee Stadium'
+    ]
+];
+
+array_unshift($stadiums, $stadium2);
+var_dump($stadium1);
+
+/* Output:
+array(3) {
+  [0]=>
+  array(3) {
+    ["Chicago"]=>
+    array(2) {
+      ["Cubs"]=>
+      string(13) "Wrigley Field"
+      ["White Sox"]=>
+      string(21) "Guaranteed Rate Field"
+    }
+    ["Los Angeles"]=>
+    array(2) {
+      ["Angels"]=>
+      string(24) "Angel Stadium of Anaheim"
+      ["Dodgers"]=>
+      string(7) "Dodgers"
+    }
+    ["New York"]=>
+    array(2) {
+      ["Mets"]=>
+      string(10) "Citi Field"
+      ["Yankees"]=>
+      string(14) "Yankee Stadium"
+    }
+  }
+  ["Los Angeles"]=>
+  array(2) {
+    ["Rams"]=>
+    string(12) "SoFi Stadium"
+    ["Chargers"]=>
+    string(12) "SoFi Stadium"
+  }
+  ["New York"]=>
+  array(2) {
+    ["Jets"]=>
+    string(16) "Met Life Stadium"
+    ["Giants"]=>
+    string(16) "Met Life Stadium"
+  }
 }
 */
