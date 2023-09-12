@@ -149,7 +149,6 @@ print_r($champion); // Output: Marvin Marciano
 
 // The array_unique function removes duplicate values from an array. The function recognizes the integer and string values as the same.
 // Use array_unique() to remove duplicates in an array of numbers.
-
 $input = array(55, "2", 76, "101", 101, 4, 2, "55", 76);
 $result = array_unique($input);
 var_dump($result);
@@ -172,7 +171,6 @@ array(5) {
 
 // The array_unshift() function prepends one or more elements to the beginning of an array.
 // Use array_unshift() function to prepend two more elemnts in an existing object.
-
 $books = [
     "Luke",
     "John"
@@ -197,7 +195,6 @@ array(4) {
 
 // The array_unshift() function prepends one or more elements to the beginning of an array.
 // Use array_unshift() function to prepend an associate array to another associatve array.
-
 $stadium1 = [
     'Los Angeles' => [
         'Rams' => 'SoFi Stadium',
@@ -267,4 +264,20 @@ array(3) {
     string(16) "Met Life Stadium"
   }
 }
+*/
+
+
+// The array_values() function returns all the values (without the keys) of an array.
+// Use array_values() to print out the largest cities of each country in the array.
+$largest_cities = array("Belarus" => "Minsk", "Croatia" => "Zagreb", "Ecuador" => "Guayancil", "Malawi" => "Lilongwe");
+print_r(array_values($largest_cities));
+
+/* Output:
+Array
+(
+    [0] => Minsk
+    [1] => Zagreb
+    [2] => Guayancil
+    [3] => Lilongwe
+)
 */
