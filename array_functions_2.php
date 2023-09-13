@@ -198,11 +198,11 @@ array(4) {
 $stadium1 = [
     'Los Angeles' => [
         'Rams' => 'SoFi Stadium',
-        'Chargers' => 'SoFi Stadium',
+        'Chargers' => 'SoFi Stadium'
     ],
     'New York' => [
         'Jets' => 'Met Life Stadium',
-        'Giants' => 'Met Life Stadium',
+        'Giants' => 'Met Life Stadium'
     ],
 ];
 $stadium2 = [
@@ -220,7 +220,7 @@ $stadium2 = [
     ]
 ];
 
-array_unshift($stadiums, $stadium2);
+array_unshift($stadium1, $stadium2);
 var_dump($stadium1);
 
 /* Output:
@@ -280,4 +280,45 @@ Array
     [2] => Guayancil
     [3] => Lilongwe
 )
+*/
+
+
+// The array_walk() funtion applies a supplied function to every member of an array
+// Use array_walk() to apply a prefix on every value of an array.
+
+$billionares = array("Bernard Arnault and family" => "Fashion and Retail", "Elon Musk" => "Automotive", "Mukesh Ambani" => "Diversified", "Larry Ellison" => "Technology", "Warren Buffet" => "Finance and Investments");
+
+// Print the array with key and source.
+function print_original($source, $key){
+    echo "$key. $source\n";
+}
+
+// Revise the value of each array to include the prefix.
+function print_revised(&$source, $key, $prefix){
+    $source = "$prefix: $source";
+}
+
+echo "Billionaires:\n";
+array_walk($billionares, 'print_original');
+
+
+echo "\nBillionaires with Source:\n";
+array_walk($billionares, 'print_revised', 'Source');
+array_walk($billionares, 'print_original');
+
+
+/* Output:
+Billionaires:
+Bernard Arnault and family. Fashion and Retail
+Elon Musk. Automotive
+Mukesh Ambani. Diversified
+Larry Ellison. Technology
+Warren Buffet. Finance and Investments
+
+Billionaires with Source:
+Bernard Arnault and family. Source: Fashion and Retail
+Elon Musk. Source: Automotive
+Mukesh Ambani. Source: Diversified
+Larry Ellison. Source: Technology
+Warren Buffet. Source: Finance and Investments
 */
