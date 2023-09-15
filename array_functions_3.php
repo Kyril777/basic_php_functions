@@ -28,3 +28,31 @@ foreach ($nombres as $key => $value) {
 2 = Herrera
 3 = Zarragoza
 */
+
+
+// The compact() function creates an array containing variables and their values.
+// Use compact() to create an array from a collection of variables and values.
+$food  = "grilled steak";
+$sport = "baseball";
+$city = "Philadelphia, PA";
+$school = "Saint Joseph's Catholic";
+$name = "Fred Goshen";
+$hometown = "Stockton, NJ";
+
+$favorites = array("food", "sport");
+$places = array("city", "school", "hometown");
+
+$result = compact("name", $favorites, $places);
+print_r($result);
+
+/* Output:
+Array
+(
+    [name] => Fred Goshen
+    [food] => grilled steak
+    [sport] => baseball
+    [city] => Philadelphia, PA
+    [school] => Saint Joseph's Catholic
+    [hometown] => Stockton, NJ
+)
+*/
