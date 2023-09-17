@@ -1,3 +1,4 @@
+<?php
 // Coin toss function.
 function fair_coin() {
     $coin = (mt_rand(0,1) == 0) ? 'heads' : 'tails';
@@ -7,7 +8,7 @@ function fair_coin() {
 echo fair_coin();
 
 
-// Execure the echo command inside of the function (rather than globally).
+// Execute the echo command inside of the function (rather than globally).
 function display_greeting($hello) {
     echo $hello;
 }
