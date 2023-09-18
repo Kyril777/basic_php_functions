@@ -57,3 +57,29 @@ function wrapped_in_tags(&$string, $tag){
 $title = 'The World Champion.';
 wrapped_in_tags($title, 'h1');
 echo $title;
+
+
+// Find the maximum value of an array.
+function maxValue($items){
+   $n = count($items);
+   $max = $items[0];
+   for ($i = 1; $i < $n; $i++)
+       if ($max < $items[$i])
+           $max = $items[$i];
+    return $max;      
+}
+ 
+// Find the minimum value of an array.
+function minValue($items){
+   $n = count($items);
+   $min = $items[0];
+   for ($i = 1; $i < $n; $i++)
+       if ($min > $items[$i])
+           $min = $items[$i];
+    return $min;      
+}
+ 
+// Driver code
+$items = array(101, 84, 53, 76, 200);
+echo(maxValue($items)); // Output: 200
+echo(minValue($items)); // Output: 53
