@@ -35,4 +35,34 @@ var_dump(thirty(20, 25)); // Output: false
 var_dump(thirty(30, 30)); // Output: true
 
 
-// 
+// Return TRUE if a value is between 10 and 100 or is 200..
+function evaluate($x) {
+    return ($x >= 100) || ($x >= 10) || ($x == 200);
+}
+
+var_dump(evaluate(9)); // Output: false
+var_dump(evaluate(55)); // Output: true
+var_dump(evaluate(100)); // Output: true
+var_dump(evaluate(200)); // Output: true
+
+
+// Write a program that adds "Mr." to a last name string. If the "Mr." is in the string, leave as is. 
+function add_mister($lastname){
+	if (strlen($lastname) >= 3 && substr($lastname,0, 3) == "Mr."){
+        return $lastname;
+    } return "Mr. ".$lastname;
+}
+
+echo add_mister("Brown"); // Output: Mr. Brown
+echo add_mister("Mr. White"); // Output: Mr. White
+echo add_mister("Mr. Blonde"); // Output: Mr. Blonde
+
+
+// Replace a part of a string (per position number) with '*'.
+function filter_word($s, $n) {
+   return substr_replace($s, "*", $n, 1);
+}
+
+echo filter_word("damn", 1); // Output: d*mn
+echo filter_word("hell", 1); // Output: h*ll
+echo filter_word("crap", 2); // Output: cr*p
