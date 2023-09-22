@@ -59,10 +59,21 @@ echo add_mister("Mr. Blonde"); // Output: Mr. Blonde
 
 
 // Replace a part of a string (per position number) with '*'.
-function filter_word($s, $n) {
+function filter_word($s, $n){
    return substr_replace($s, "*", $n, 1);
 }
 
 echo filter_word("damn", 1); // Output: d*mn
 echo filter_word("hell", 1); // Output: h*ll
 echo filter_word("crap", 2); // Output: cr*p
+
+
+// Check to see if an entry is divisble by 2, 3, 5 or 7.
+function multiple_test($entry){
+   return $entry % 2 == 0 || $entry % 3 == 0 || $entry % 5 == 0 || $entry % 7 == 0;
+}
+
+var_dump(multiple_test(7)); // Output: true
+var_dump(multiple_test(19)); // Output: false
+var_dump(multiple_test(25)); // Output: true
+var_dump(multiple_test(37)); // Output: false
