@@ -77,3 +77,57 @@ var_dump(multiple_test(7)); // Output: true
 var_dump(multiple_test(19)); // Output: false
 var_dump(multiple_test(25)); // Output: true
 var_dump(multiple_test(37)); // Output: false
+
+
+// Check to see if a certain value falls betweem the range of 25 to 75.
+function check_value($value) 
+{
+   return $value >= 25 && $value <= 75;
+}
+
+var_dump(check_value(76)); // Output: false
+var_dump(check_value(1)); // Output: false
+var_dump(check_value(50)); // Output: true
+var_dump(check_value(25)); // Output: true 
+var_dump(check_value(75)); // Output: true
+
+
+// Find out the maximum value in a set of three integers.
+function test($x, $y, $z){
+  $max = max($x, max($y, $z));
+  return $max;
+}
+
+echo test(22, 42, 16); // Output: 42
+echo test(38, 54, 80); // Output: 80
+echo test(5, 3, 7); // Output: 7
+echo test(-9, -1, -13); // Output: -1
+
+
+// Check to see if a last name contains two a's.
+function test($s) {
+	$lname = strtolower($s);
+	$ctr = 0;
+	for ($i = 0; $i < strlen($lname); $i++) {
+		if (substr($lname, $i, 1) == 'a') {
+            $ctr++;
+        }
+    }
+	return $ctr == 2;
+}
+
+var_dump(test("Haan")); // Output: true
+var_dump(test("Olsen")); // Output: false
+var_dump(test("Zazz")); // Output: true
+var_dump(test("Aasen")); // Output: false
+
+
+// Find out if the last digits of two integers are the same value.
+function last_digits($int1, $int2) {
+  return abs($int1 % 10) == abs($int2 % 10);
+}
+
+var_dump(last_digits(975, 64)); // Output: false
+var_dump(last_digits(340, 90)); // Output: true
+var_dump(last_digits(1, 127)); // Output: false
+var_dump(last_digits(15, 55)); // Output: true
