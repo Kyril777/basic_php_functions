@@ -131,3 +131,17 @@ var_dump(last_digits(975, 64)); // Output: false
 var_dump(last_digits(340, 90)); // Output: true
 var_dump(last_digits(1, 127)); // Output: false
 var_dump(last_digits(15, 55)); // Output: true
+
+
+// Find out which two values are close to zero.
+function close_to_zero($a, $b) {
+   $n = 0;
+   $abs_val1 = abs($a - $n);
+   $abs_val2 = abs($b - $n);
+   return $abs_val1 == $abs_val2 ? "Both are equally close to zero." : ($abs_val1 < $abs_val2 ? $a : $b);
+}
+
+echo close_to_zero(56, -56); // Output: Both are equally close to zero.
+echo close_to_zero(-1, -2); // Output: -1
+echo close_to_zero(25, 6); // Output: 6
+echo close_to_zero(-4, 3); // Output: 3
