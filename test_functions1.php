@@ -145,3 +145,21 @@ echo close_to_zero(56, -56); // Output: Both are equally close to zero.
 echo close_to_zero(-1, -2); // Output: -1
 echo close_to_zero(25, 6); // Output: 6
 echo close_to_zero(-4, 3); // Output: 3
+
+
+// Extract a number of odd numbers out of an integer.
+function extract_odds($nums, $count) { 
+      $evens = [$count];
+        $j = 0;
+
+        for ($i = 0; $j < $count; $i++) {
+                if ($nums[$i] % 2 != 0) {
+                    $evens[$j] = $nums[$i];
+                    $j++;
+                }
+            }
+            return $evens;
+    }
+    
+$result = extract_odds([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 4);
+echo implode(",", $result); // Outpit: 1, 3, 5, 7
