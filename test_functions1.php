@@ -147,6 +147,34 @@ echo close_to_zero(25, 6); // Output: 6
 echo close_to_zero(-4, 3); // Output: 3
 
 
+// Find out if an array is ordered from low to high.
+function ascending_values($values){ 
+       for ($i = 0; $i < sizeof($values) - 1; $i++){
+             if ($values[$i + 1] < $values[$i]) 
+             return false;
+          }
+        return true;
+    }  
+    
+var_dump(ascending_values([2, 3, 5, 7, 11])); // Output: true
+var_dump(ascending_values([6, 6, 5, 4])); // Output: false
+var_dump(ascending_values([10, 10, 10, 11])); // Output: true
+var_dump(ascending_values([2, 4, 6, 8, 10, 9])); // Output: false
+
+
+// Find how many names in an array has a specific length.
+function name_length($name, $length){ 
+	$counter = 0;
+        for ( $i = 0;  $i < sizeof($name);  $i++){
+                if (strlen($name[$i]) ==  $length)  $counter++;
+            }
+            return  $counter;
+    }
+    
+
+echo name_length(["Jones", "Lean", "Monica", "Bret", "Carlos"], 4); // Output: 2
+
+
 // Extract a number of odd numbers out of an integer.
 function extract_odds($nums, $count) { 
       $evens = [$count];
