@@ -191,3 +191,17 @@ function extract_odds($nums, $count) {
     
 $result = extract_odds([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 4);
 echo implode(",", $result); // Outpit: 1, 3, 5, 7
+
+
+// Add three integers. Remove duplicates from the sum.
+function add_unique_numbers($x, $y, $z){
+   if ($x == $y && $y == $z) return 0;
+            if ($x == $y) return $z;
+            if ($x == $z) return $y;
+            if ($y == $z) return $x;
+            return $x + $y + $z;
+}
+echo (add_unique_numbers(2, 3, 5))."\n"; // Output: 10
+echo (add_unique_numbers(2, 2, 12))."\n"; // Output: 12
+echo (add_unique_numbers(10, 10, 10))."\n"; // Output: 0
+echo (add_unique_numbers(4, 7, 10))."\n"; // Output: 21
